@@ -1,0 +1,27 @@
+ion-menu {
+    --width: 260px;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  
+  ion-toolbar {
+    --background: #121212;
+    --color: white;
+  }
+  
+  ion-item {
+    --background: transparent;
+    --color: white;
+    --padding-start: 20px;
+    transition: background 0.3s;
+  }
+  
+  ion-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  ion-icon {
+    color: #4caf50; 
+    margin-right: 10px;
+  }
+  

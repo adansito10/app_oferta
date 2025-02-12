@@ -1,0 +1,84 @@
+ion-toolbar {
+  --background: #1e1e1e;
+  --color: white;
+  --border-color: #333;
+  border-bottom: 1px solid var(--border-color);
+}
+
+ion-title {
+  font-weight: bold;
+}
+
+ion-menu {
+  --background: #121212;
+  --ion-item-background: transparent;
+}
+
+ion-item {
+  --background-hover: #2a2a2a;
+  color: white;
+}
+
+ion-icon {
+  color: #f0f0f0;
+}
+
+.banner-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.banner-card img:hover {
+  transform: scale(1.05);
+}
+
+ion-list-header {
+  color: white;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+ion-item {
+  background: #1e1e1e;
+  margin: 5px 0;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+ion-item:hover {
+  background: #292929;
+}
+
+.discount {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+ion-segment {
+  background: #1e1e1e;
+  color: white;
+}
+
+ion-segment-button {
+  --color-checked: #4caf50;
+  --indicator-color: #4caf50;
+}
+
+ion-searchbar {
+  --background: #2a2a2a;
+  --color: white;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+
+.main-title {
+  font-size: 28px; /* Tamaño grande */
+  font-weight: bold;
+  color: white;    /* Color blanco */
+  text-align: center; 
+  margin: 20px 0;  /* Espaciado arriba y abajo */
+}

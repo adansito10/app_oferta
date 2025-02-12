@@ -1,0 +1,65 @@
+
+
+
+<ion-header>
+  <ion-toolbar color="secundary">
+
+    
+
+    
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleSearch()">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-searchbar 
+    *ngIf="isSearchVisible" 
+    [(ngModel)]="searchQuery" 
+    (ionInput)="filterGames()" 
+    placeholder="Buscar juegos...">
+  </ion-searchbar>
+
+  <ion-segment [(ngModel)]="selectedPlatform" (ionChange)="filterGames()">
+    <ion-segment-button value="all">Todos</ion-segment-button>
+    <ion-segment-button value="PC">PC</ion-segment-button>
+    <ion-segment-button value="PlayStation">PS</ion-segment-button>
+    <ion-segment-button value="Xbox">Xbox</ion-segment-button>
+    <ion-segment-button value="Switch">Switch</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="banner-card">
+    <img src="https://i.ytimg.com/vi/vBQshaVXXF0/hqdefault.jpg" alt="Avowed Banner" />
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Más Populares</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let game of filteredGames" (click)="verComparacion(game)">
+      <ion-thumbnail slot="start">
+        <img [src]="game.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ game.name }}</h2>
+        <p>
+          {{ game.platform }} - 
+          <span class="discount">{{ game.discount }}%</span> 
+          {{ game.price }}€
+        </p>
+      </ion-label>
+
+      <ion-button fill="clear" slot="end" (click)="toggleFavorite(game); $event.stopPropagation()">
+        <ion-icon [name]="isFavorite(game) ? 'heart' : 'heart-outline'" color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,97 @@
+ion-content {
+  --background: #121212;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+.promo-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.promo-banner h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.view-all-btn {
+  --border-color: #fff;
+  --color: #fff;
+  --border-radius: 10px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-width: 1px;
+  text-transform: none;
+}
+
+.offer-card {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00aaff;
+  color: #fff;
+  padding: 4px 8px;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+ion-img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.game-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin: 8px 0 4px;
+}
+
+.platform {
+  font-size: 12px;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+.final-price {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.buy-btn {
+  --background: #00c853;
+  --border-radius: 8px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}

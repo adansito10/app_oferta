@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>🎮 Tus Favoritos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+  
+    <ion-grid *ngIf="favorites.length > 0; else noFavorites">
+      <ion-row>
+        <ion-col size="12" size-md="6" *ngFor="let game of favorites">
+          <ion-card class="favorite-card">
+  
+            <ion-img [src]="game.image" alt="{{ game.name }}"></ion-img>
+  
+            <ion-card-content>
+              <h2 class="game-title">{{ game.name }}</h2>
+              <p class="platform">{{ game.platform.toUpperCase() }}</p>
+  
+              <div class="price-info">
+                <strong class="price">{{ game.price }}€</strong>
+              </div>
+  
+              <ion-button expand="full" fill="outline" color="danger" (click)="removeFavorite(game)">
+                <ion-icon name="trash-outline" slot="start"></ion-icon>
+                Eliminar de Favoritos
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ng-template #noFavorites>
+      <div class="empty-favorites">
+        <ion-icon name="heart-dislike-outline" class="empty-icon"></ion-icon>
+        <h3>No tienes juegos favoritos aún.</h3>
+        <p>¡Explora ofertas y guarda tus favoritos aquí!</p>
+      </div>
+    </ng-template>
+  </ion-content>
+  

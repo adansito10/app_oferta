@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comparación de Precios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="game" class="ion-padding">
+  <ion-card class="game-card">
+    <img [src]="game.image" alt="{{ game.name }}" />
+    <ion-card-header>
+      <ion-card-title>{{ game.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip color="primary">{{ game.platform }}</ion-chip>
+      <p><strong>Precio Base:</strong> {{ game.price }}€</p>
+      <p>
+        <strong>Descuento:</strong>
+        <span [class.positive]="game.discount < 0" [class.negative]="game.discount >= 0">
+          {{ game.discount }}%
+        </span>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list class="price-comparison">
+    <ion-list-header>
+      <ion-label>💸 Compara precios en <strong>todas las tiendas online</strong></ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let offer of game.offers" class="offer-item" lines="none">
+      <ion-avatar slot="start">
+        <img [src]="offer.storeLogo" alt="{{ offer.store }}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ offer.store }}</h2>
+        <p *ngIf="offer.coupon" class="coupon">
+        </p>
+      </ion-label>
+      <div class="price-info">
+        <p class="original-price" *ngIf="offer.originalPrice">{{ offer.originalPrice }}€</p>
+        <p class="final-price">{{ offer.finalPrice }}€</p>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

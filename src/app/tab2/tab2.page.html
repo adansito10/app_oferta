@@ -1,0 +1,28 @@
+<ion-content class="ion-padding">
+  <div class="promo-banner">
+    <h1>Ofertas destacadas</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let offer of featuredOffers">
+        <ion-card class="offer-card">
+          <div *ngIf="offer.discount > 0" class="discount-badge">
+            -{{ offer.discount }}%
+          </div>
+          <ion-img [src]="offer.image" alt="{{ offer.game }}"></ion-img>
+          <ion-card-content>
+            <h3 class="game-title">{{ offer.game }}</h3>
+            <p class="platform">{{ offer.platform.toUpperCase() }}</p>
+            <div class="price-container">
+              <span class="original-price" *ngIf="offer.originalPrice">
+                ${{ offer.originalPrice }}
+              </span>
+              <span class="final-price">${{ offer.finalPrice }}</span>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
